@@ -13,7 +13,18 @@ public class Book {
     Book() {
     }
 
-    // Creates an instance of a Book
+    Book(BookTitle title, BookAuthor author, BookNumberOfPages numberOfPages) {
+        this.title = title;
+        this.author = author;
+        this.numberOfPages = numberOfPages;
+    }
+
+    // An ordinary constructor, sending in a list of value objects.
+    public static Book create(BookTitle title, BookAuthor author, BookNumberOfPages numberOfPages) {
+        return new Book(title, author, numberOfPages);
+    }
+
+    // Create a book by using the pattern Chained Creator.
     public static ArgTitle create() {
         return new Book().new ArgTitle();
     }
@@ -36,11 +47,6 @@ public class Book {
             Book.this.author = new BookAuthor(author);
             return new ArgNumberOfPages();
         }
-
-        public ArgNumberOfPages author(BookAuthor author) {
-            Book.this.author = author;
-            return new ArgNumberOfPages();
-        }
     }
 
     public class ArgNumberOfPages {
@@ -48,15 +54,10 @@ public class Book {
             Book.this.numberOfPages = new BookNumberOfPages(numberOfPages);
             return Book.this;
         }
-
-        public Book numberOfPages(BookNumberOfPages numberOfPages) {
-            Book.this.numberOfPages = numberOfPages;
-            return Book.this;
-        }
     }
 
     @Override
     public String toString() {
-        return "Book{title=" + title + ", author=" + author + ", numberOfPages=" + numberOfPages + '}';
+        return "Book{title='" + title + "', author='" + author + "', numberOfPages=" + numberOfPages + '}';
     }
 }
