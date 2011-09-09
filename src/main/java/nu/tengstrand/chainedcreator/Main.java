@@ -54,7 +54,8 @@ public class Main {
 
     /**
      * If your class is mainly made ​​up of value objects,
-     * it may be easier not to use the pattern Chained Constructor.
+     * it may be easier not to use the pattern Chained Constructor,
+     * this is an example of that, using an ordinary parameter list.
      */
     private static void bookExample3() {
         Book book = Book.create(new BookTitle("The Pragmatic Programmer"),
