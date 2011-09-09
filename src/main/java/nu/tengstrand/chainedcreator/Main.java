@@ -8,7 +8,7 @@ import nu.tengstrand.chainedcreator.car.Car;
 
 public class Main {
     /**
-     * This is an example of the pattern Chained Constructor.
+     * This is an example of the pattern Chained Creator.
      *
      * Author: Joakim Tengstrand
      */
