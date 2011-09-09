@@ -13,16 +13,20 @@ public class Main {
      * Author: Joakim Tengstrand
      */
     public static void main(String[] args) {
+        /**
+         * The examples car and book 1 are very similar, the difference lies in
+         * how they store their internal representation. The Car is using primitive data types
+         * but the Book is using value objects.
+         */
         carExample();
         bookExample1();
+
         bookExample2();
         bookExample3();
     }
 
     /**
-     * The car example and the book example 1 are very similar, the difference lies in
-     * how they store their internal representation. The Car is using primitive data types
-     * but the Book is using value objects.
+     * Create a book sending in primitive data types.
      */
     private static void carExample() {
         Car car = Car.create().name("Lamborghini").color("Red").length(458);
@@ -30,7 +34,7 @@ public class Main {
     }
 
     /**
-     * Create a book using primitive data types.
+     * Create a book sending in primitive data types.
      */
     private static void bookExample1() {
         Book book = Book.create().title("Test Driven").author("Lasse Koskela").numberOfPages(544);
