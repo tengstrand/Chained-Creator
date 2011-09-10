@@ -5,59 +5,38 @@ package nu.tengstrand.chainedcreator.book;
  * with a mix of value objects and primitive data types.
  */
 public class Book {
-    private BookTitle title;
-    private BookAuthor author;
-    private BookNumberOfPages numberOfPages;
+    BookTitle title;
+    BookBinding binding;
+    BookAuthor author;
+    BookNumberOfPages numberOfPages;
+    BookWeightInGrams grams;
+
+    BookCreator creator = new BookCreator(this);
 
     // Package-private access level
     Book() {
     }
 
-    Book(BookTitle title, BookAuthor author, BookNumberOfPages numberOfPages) {
+    Book(BookTitle title, BookBinding binding, BookAuthor author, BookNumberOfPages numberOfPages, BookWeightInGrams grams) {
         this.title = title;
+        this.binding = binding;
         this.author = author;
         this.numberOfPages = numberOfPages;
+        this.grams = grams;
     }
 
     // An ordinary constructor, sending in a list of value objects.
-    public static Book create(BookTitle title, BookAuthor author, BookNumberOfPages numberOfPages) {
-        return new Book(title, author, numberOfPages);
+    public static Book create(BookTitle title, BookBinding binding, BookAuthor author, BookNumberOfPages numberOfPages, BookWeightInGrams grams) {
+        return new Book(title, binding, author, numberOfPages, grams);
     }
 
     // Create a book by using the pattern Chained Creator.
-    public static ArgTitle create() {
-        return new Book().new ArgTitle();
-    }
-
-    // Parameter chain - start
-    public class ArgTitle {
-        public ArgAuthor title(String title) {
-            Book.this.title = new BookTitle(title);
-            return new ArgAuthor();
-        }
-
-        public ArgAuthor title(BookTitle title) {
-            Book.this.title = title;
-            return new ArgAuthor();
-        }
-    }
-
-    public class ArgAuthor {
-        public ArgNumberOfPages author(String author) {
-            Book.this.author = new BookAuthor(author);
-            return new ArgNumberOfPages();
-        }
-    }
-
-    public class ArgNumberOfPages {
-        public Book numberOfPages(int numberOfPages) {
-            Book.this.numberOfPages = new BookNumberOfPages(numberOfPages);
-            return Book.this;
-        }
+    public static BookCreator.Title create() {
+        return new Book().creator.create();
     }
 
     @Override
     public String toString() {
-        return "Book{title='" + title + "', author='" + author + "', numberOfPages=" + numberOfPages + '}';
+        return "Book{title='" + title + "', author='" + author + "', numberOfPages=" + numberOfPages + ", weighInGrams=" + grams + "}";
     }
 }
