@@ -25,6 +25,11 @@ public class Book {
         this.grams = grams;
     }
 
+    // An ordinary constructor, sending in a list of primitive types.
+    public static Book create(String title, BookBinding binding, String author, int numberOfPages, int grams) {
+        return new Book(new BookTitle(title), binding, new BookAuthor(author), new BookNumberOfPages(numberOfPages), new BookWeightInGrams(grams));
+    }
+
     // An ordinary constructor, sending in a list of value objects.
     public static Book create(BookTitle title, BookBinding binding, BookAuthor author, BookNumberOfPages numberOfPages, BookWeightInGrams grams) {
         return new Book(title, binding, author, numberOfPages, grams);

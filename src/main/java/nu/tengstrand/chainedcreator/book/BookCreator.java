@@ -16,13 +16,19 @@ public class BookCreator {
 
     public class Title {
         public Binding title(String title) {
-            book.title = new BookTitle(title);
-            return new Binding();
+            return title(new BookTitle(title));
         }
-
         public Binding title(BookTitle title) {
             book.title = title;
             return new Binding();
+        }
+        public Book defaults() {
+            title("UNKNOWN TITLE");
+            new Binding().defaultBinding();
+            new Author().unknownAuthor();
+            book.numberOfPages = new BookNumberOfPages(2);
+            new WeightInGrams().defaultWeightInGrams();
+            return book;
         }
     }
 
@@ -51,7 +57,7 @@ public class BookCreator {
         }
 
         public NumberOfPages unknownAuthor() {
-            return author("UNKNOWN");
+            return author("UNKNOWN AUTHOR");
         }
     }
 
@@ -69,8 +75,7 @@ public class BookCreator {
         }
 
         public Book defaultWeightInGrams() {
-            book.grams = new BookWeightInGrams();
-            return book;
+            return weighInGrams(BookWeightInGrams.DEFAULT_WEIGHT);
         }
     }
 }
