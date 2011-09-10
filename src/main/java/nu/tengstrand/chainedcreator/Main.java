@@ -12,12 +12,14 @@ public class Main {
      * If used in a public API, it will keep the code clean for a lot of people!
      *
      * The pros lies in the code that is creating an object:
-     *   - You can see the name of the arguments, which makes the code more readable.
-     *   - You can have default values for some or all arguments.
-     *   - You can make enum parameters more readable.
-     *   - You can change order of parameters with same type without introducing errors.
-     *   - You only have one constructor but with support for different paths.
-     *   - You can guarantee that all attributes in the object are set.
+     *   - Let the code communicate What instead of How, for example
+     *     Car.create().defaults() instead of new Car().
+     *   - View the name of the arguments, which makes the code more readable.
+     *   - Support for default values for some or all arguments.
+     *   - Make use of enumerated parameters more readable.
+     *   - Change order of parameters with same type without introducing errors.
+     *   - One constructor with support for different paths.
+     *   - Guarantee that all attributes in the object are set.
      *
      * The cons is that you need to add boilerplate code in the Creator.
      * It would be good if IDEs could add support for generating chained creators
