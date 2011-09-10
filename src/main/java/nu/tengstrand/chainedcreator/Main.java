@@ -31,7 +31,7 @@ public class Main {
      *   - Guarantee that all attributes in the object are set.
      *
      * The cons is that you need to add boilerplate code in the Creator.
-     * It would be good if IDEs could add support for generating chained constructors
+     * It would be nice if IDEs could add support for generating chained constructors
      * the same way they can generate ordinary constructors!
      *
      * Author: Joakim Tengstrand
