@@ -10,9 +10,9 @@ public class Main {
      * The idea is to reduce mental load for the user of the "constructor"
      * by making the code cleaner and more readable.
      *
-     * It can be used to create ordinary class instances or if you have a method with
-     * a large parameter list, it can be replaced by a class where you use this pattern
-     * for its creation.
+     * It can be used to create ordinary class instances or if you have a method
+     * with a large parameter list, it can be replaced by a class where you use
+     * this pattern for its creation.
      *
      * If used in a public API, it will keep the code clean for a lot of people!
      *
@@ -23,16 +23,18 @@ public class Main {
      *   - Support for default values for some or all arguments.
      *   - Make use of enumerated parameters more readable.
      *   - Change order of parameters with same type without introducing errors.
-     *   - Easier to fill in the argument list, the IDE only shows the next argument in the chain.
-     *     When you for example writes Car.create() followed by a dot, your IDE will
-     *     help you by showing you the name of the first argument in the method chain,
-     *     the second argument is shown when pressing dot after the first argument and so on.
-     *   - One constructor with support for different paths, no need for a set of constructors.
+     *   - Easier to fill in the argument list, the IDE only shows the next
+     *     argument in the chain. When you for example writes Car.create()
+     *     followed by a dot, your IDE will help you by showing you the name of
+     *     the first argument in the method chain, the second argument is shown
+     *     when pressing dot after the first argument and so on.
+     *   - One constructor with support for different paths, no need for a set of
+     *     constructors.
      *   - Guarantee that all attributes in the object are set.
      *
      * The cons is that you need to add boilerplate code in the Creator.
-     * It would be nice if IDEs could add support for generating chained constructors
-     * the same way they can generate ordinary constructors!
+     * It would be nice if IDEs could add support for generating chained
+     * constructors the same way they can generate ordinary constructors!
      *
      * Author: Joakim Tengstrand
      */
