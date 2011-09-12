@@ -23,13 +23,13 @@ public class Main {
 
     // Example 1
     private static void bookExampleUsingPrimitiveTypesNotUsingChainedCreator() {
-        Book book = Book.create("Clean Code", BookBinding.PAPERBACK, "Robert C Martin", 431, 660);
+        Book book = new Book("Clean Code", BookBinding.PAPERBACK, "Robert C Martin", 431, 660);
         printExample(1, book);
     }
 
     // Example 2
     private static void bookExampleUsingValueObjectsNotUsingChainedCreator() {
-        Book book = Book.create(new BookTitle("The Pragmatic Programmer"),
+        Book book = new Book(new BookTitle("The Pragmatic Programmer"),
                 BookBinding.PAPERBACK,
                 new BookAuthor("Andrew Hunt, David Thomas"),
                 new BookNumberOfPages(352),
