@@ -1,7 +1,5 @@
 package nu.tengstrand.chainedcreator.book;
 
-import javax.xml.bind.annotation.XmlElementRef;
-
 public class BookWeightInGrams {
     private int grams;
 
