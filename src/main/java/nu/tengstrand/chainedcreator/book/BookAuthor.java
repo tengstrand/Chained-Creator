@@ -1,7 +1,7 @@
 package nu.tengstrand.chainedcreator.book;
 
 public class BookAuthor {
-    public final String author;
+    private final String author;
 
     public BookAuthor(String author) {
         if (author == null || author.length() == 0) {
